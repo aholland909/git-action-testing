@@ -4,15 +4,15 @@ on:
   push:
     branches:
       - main
-
 jobs:
   merge:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
+    - uses: actions/checkout@v2
+    - name: Set Git config
+      run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "Github Actions"
     - name: Create Release Branch if not exists and Merge Main to Release
       run: |
         git fetch --prune --unshallow
