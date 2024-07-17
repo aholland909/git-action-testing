@@ -14,8 +14,8 @@ jobs:
           git config --local user.name "Github Actions"
     - name: Create Release Branch if not exists and Merge Main to Release
       run: |
-        git fetch --unshallow
-        git checkout release
-        git pull
-        git merge --no-ff master -m "Auto-merge master back to release"
-        git push
+        git fetch --prune --unshallow
+        git checkout -B release
+        git fetch origin
+        git merge origin/main --no-ff -m "Auto-merge main back to phoenix-releases"
+        git push origin release
