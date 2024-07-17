@@ -16,6 +16,6 @@ jobs:
       run: |
         git fetch --all
         git checkout -B release
-        git fetch origin
+        git pull
         git merge origin/main --no-ff -m "Auto-merge main back to phoenix-releases"
         git push origin release
