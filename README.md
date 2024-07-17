@@ -27,6 +27,3 @@ jobs:
         git push origin release
 
 ```
-
-## Test
-Add some stuff
