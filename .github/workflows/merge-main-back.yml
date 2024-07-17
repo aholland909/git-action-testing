@@ -15,7 +15,7 @@ jobs:
     - name: Create Release Branch if not exists and Merge Main to Release
       run: |
         git fetch --all
-        git checkout -B release
+        git checkout -b release
         git pull
-        git merge origin/main --no-ff -m "Auto-merge main back to phoenix-releases"
-        git push origin release
+        git merge origin/main --no-ff -m "Auto-merge main back to release"
+        git push
